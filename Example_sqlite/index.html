@@ -8,9 +8,41 @@
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
+    <script src="script/app.js"></script>
+    <script src="script/reg.js"></script>
     
 </head>
 <body>
-    
+    <div data-role="view" id="home" data-title="SqLite" data-model="app.reg" data-show="app.reg.show">
+        <p>
+            <input type="text" name="uname" id="uname" data-bind="value:uname"/>
+        </p>
+        <p>
+            <input type="text" name="email" id="email" data-bind="value:email"/>
+        </p>
+        <p>
+            <input type="text" name="password" id="password" data-bind="value:password"/>
+        </p>
+        <p>
+            <input type="number" name="number" id="mobile"/>
+        </p>
+        <p>
+            <select id="status">
+                <option value="0" selected>Status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+            </select>
+        </p>
+        <p>
+            <select id="occupation">
+                <option value="0" selected>Occupation</option>
+                <option value="student">Student</option>
+                <option value="employee" >Employee</option>
+            </select>
+        </p>
+        <p>
+            <a data-role="button" data-bind="click:registration">Submit</a>
+        </p>
+    </div>
 </body>
 </html>
