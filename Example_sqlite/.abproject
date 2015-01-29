@@ -1,0 +1,37 @@
+{
+  "ProjectName": "Example_sqlite",
+  "ProjectGuid": "06a4d21e-de21-4aa3-80e0-4f07442a2b9d",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.Examplesqlite",
+  "DisplayName": "Example_sqlite",
+  "Author": "",
+  "Description": "",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.5.0",
+  "AndroidPermissions": [],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{58e235e1-a617-49f6-bca6-3bb3f5095ab8}",
+  "WP8ProductID": "{a506d04b-6349-4755-9877-3c2958c84b5d}",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
