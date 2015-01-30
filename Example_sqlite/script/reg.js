@@ -61,7 +61,7 @@ app.reg = (function(){
             else
             {
                 data.push({firstname:username},{useremail:email},{userpassword:password},{usermobile:mobile},{userstatus:status},{useroccupation:occupation});
-                app.insertData(data); 
+                app.insertData(data);
             }
         };
 

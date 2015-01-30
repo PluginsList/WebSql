@@ -4,45 +4,105 @@
     <title></title>
     <meta charset="utf-8" />
     <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    
+    <style>
+        .txtbox{width:100%;height:35px;border:1px solid #CCC;padding-left:7px;}
+        .km-pop:after,.km-pop:before{content: "\e078";}
+    </style>
 
     <script src="cordova.js"></script>
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="script/app.js"></script>
     <script src="script/reg.js"></script>
+    <script src="script/login.js"></script>
+    <script src="script/dashboard.js"></script>
     
 </head>
 <body>
-    <div data-role="view" id="home" data-title="SqLite" data-model="app.reg" data-show="app.reg.show">
-        <p>
-            <input type="text" name="uname" id="uname" data-bind="value:uname"/>
-        </p>
-        <p>
-            <input type="text" name="email" id="email" data-bind="value:email"/>
-        </p>
-        <p>
-            <input type="text" name="password" id="password" data-bind="value:password"/>
-        </p>
-        <p>
-            <input type="number" name="number" id="mobile"/>
-        </p>
-        <p>
-            <select id="status">
-                <option value="0" selected>Status</option>
-                <option value="single">Single</option>
-                <option value="married">Married</option>
-            </select>
-        </p>
-        <p>
-            <select id="occupation">
-                <option value="0" selected>Occupation</option>
-                <option value="student">Student</option>
-                <option value="employee" >Employee</option>
-            </select>
-        </p>
-        <p>
-            <a data-role="button" data-bind="click:registration">Submit</a>
-        </p>
+    <div data-role="view" id="home" data-layout="signup" data-title="New User" data-model="app.reg" data-show="app.reg.show">
+       <div style="width:95%;height:auto;margin:0px auto;margin-top:25px;">
+            <p>
+                <input type="text" name="uname" id="uname" data-bind="value:uname" class="txtbox" placeholder="Your Name"/>
+            </p>
+            <p>
+                <input type="text" name="email" id="email" data-bind="value:email" class="txtbox" placeholder="Email Address"/>
+            </p>
+            <p>
+                <input type="password" name="password" id="password" data-bind="value:password" class="txtbox" placeholder="Password"/>
+            </p>
+            <p>
+                <input type="number" name="number" id="mobile" class="txtbox" placeholder="Mobile Number"/>
+            </p>
+            <p>
+                <select id="status" class="txtbox">
+                    <option value="0" selected>Status</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                </select>
+            </p>
+            <p>
+                <select id="occupation" class="txtbox">
+                    <option value="0" selected>Occupation</option>
+                    <option value="student">Student</option>
+                    <option value="employee" >Employee</option>
+                </select>
+            </p>
+            <p>
+                <a data-role="button" data-bind="click:registration" style="width:100%;height:40px;">Submit</a>
+            </p>
+       </div>
+    </div>
+    <div data-role="layout" data-id="signup">
+        <div data-role="header">
+            <div data-role="navbar">
+                <a data-role="backbutton" data-align="left">Back</a>
+                <span data-role="view-title"></span>
+            </div>
+        </div>
+    </div>
+    
+    <!---->
+    <div data-role="view" id="login" data-model="app.login">
+        <div style="width:95%;height:auto;margin:0px auto;margin-top:25px;">
+            <div data-bind="invisible:isLoggedIn">
+                <p>
+                    <input type="text" name="lemail" id="lemail" data-bind="value:luemail" class="txtbox" placeholder="Email Address"/>
+                </p>
+                <p>
+                    <input type="password" name="lpassword" id="lpassword" data-bind="value:lupassword" class="txtbox" placeholder="Password"/>
+                </p>
+            </div>
+            <p>
+                <a data-role="button" data-bind="click:login,invisible: isLoggedIn" style="width:100%;height:40px;">Submit</a>
+            </p>
+            <p>
+                <a href="#home">New User Registration</a>
+            </p>
+        </div>
+    </div>
+    
+    <!---->
+    <div data-role="view" id="dashboard" data-title="Dashboard" data-model="app.dashboard" data-show="app.dashboard.show">
+        <div data-role="header">
+            <div data-role="navbar">
+                <span data-role="view-title"></span>
+                <a data-role="button" data-rel="popover" href="#poplist"  data-align="right" data-icon="pop"></a>
+            </div>
+        </div>
+        
+        <div data-role="content">
+            <ul data-role="listview" id="userList"></ul>
+        </div>
+        
+        <div data-role="popover" id="poplist">
+            <div data-role="view" data-model="app.dashboard">
+                <ul data-role="listview">
+                    <li data-bind="click:logout">Logout</li>
+                    <li data-bind="click:logout">User List</li>
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
