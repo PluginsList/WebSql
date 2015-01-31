@@ -1,9 +1,9 @@
 var app = app || {};
 
 app.login = (function(){
-    
+   'use strict'; 
    
-    loginViewModel = (function(){
+    var loginViewModel = (function(){
         
         var loginUsername,
             loginPassword;
@@ -27,20 +27,9 @@ app.login = (function(){
             }
         };
         
-        var userLogout = function()
-        {
-            $('#lemail').val('');
-            $('#lpassword').val('');
-            app.apps.navigate('#login');
-        };
-         
-    
         return{
-            login:login,
-            userLogout:userLogout
+            login:login
         };
-        
     }());
-    
     return loginViewModel;
 }());

@@ -1,5 +1,5 @@
 var app = (function(win){
-    'use strict'
+    'use strict';
     
     var db,apps;
     
@@ -11,7 +11,6 @@ var app = (function(win){
     
     var createDB = function()
     {
-        
         if(window.sqlitePlugin !== undefined)
         {
             db = window.sqlitePlugin.openDatabase("SQLDB");
@@ -52,10 +51,6 @@ var app = (function(win){
         db.transaction(function(tx){
             tx.executeSql("select * from users where email=? and password=?",[id,pwd],onLoginSuccess);
         });
-        
-        db.transaction(function(tx){
-            tx.executeSql("select * from users order by id",[],userDataSuccess);
-        });
     };
     
     var onLoginSuccess = function(tx, r)
@@ -64,22 +59,26 @@ var app = (function(win){
        
         if(count!==0)
         {
+            localStorage.setItem('loginStatus',true);
             apps.navigate("#dashboard");
         }
         else
         {
+            localStorage.setItem('loginStatus',false);
             navigator.notification.alert("User id does not exist",function(){},"Notification","OK");  
         }
     };
     
-    var userDataSuccess = function(tx,result)
-    {
-        app.dashboard.loadUserData(result);
-    };
-    
     document.addEventListener("deviceready",init,false);
     
-    apps = new kendo.mobile.Application(document.body,{skin:'flat',initial:'login'});
+    if(localStorage.getItem('loginStatus')===true || localStorage.getItem('loginStatus')=== 'true')
+    {
+        apps = new kendo.mobile.Application(document.body,{skin:'flat',initial:'dashboard'});
+    }
+    else
+    {
+        apps = new kendo.mobile.Application(document.body,{skin:'flat',initial:'login'});
+    }
     
     return{
         apps:apps,

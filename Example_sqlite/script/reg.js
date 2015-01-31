@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.reg = (function(){
-    'use strict'
+    'use strict';
     
     var regViewModel = (function(){
         
