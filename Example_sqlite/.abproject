@@ -38,6 +38,7 @@
     "org.apache.cordova.battery-status",
     "org.apache.cordova.camera",
     "org.apache.cordova.media-capture",
+    "org.apache.cordova.console",
     "org.apache.cordova.contacts",
     "org.apache.cordova.device",
     "org.apache.cordova.device-motion",
@@ -51,7 +52,11 @@
     "org.apache.cordova.network-information",
     "org.apache.cordova.dialogs",
     "org.apache.cordova.splashscreen",
+    "com.phonegap.plugins.sqlite",
     "org.apache.cordova.statusbar",
     "org.apache.cordova.vibration"
-  ]
+  ],
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8PackageIdentityName": "1234Telerik.com.telerik.Examplesqlite",
+  "WPSdk": "8.0"
 }

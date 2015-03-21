@@ -5,6 +5,7 @@ var app = (function(win){
     
     var init=function()
     {
+        console.log(window.sqlitePlugins);
         createDB();
         createTable();
     };
